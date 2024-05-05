@@ -27,23 +27,39 @@ printf("  / \\/    |              /  \\        |   |  |\\ |    /\\ \n");
   system("cls");
   
   int password=2024,input=0,n=0;
-  
+  	char choose;
+	char draw;
   
   
   printf("請輸入密碼:\n");
   scanf("%d",&input);
   while(input!=2024){
-  		n++;
-		printf("密碼錯誤");
+		n++;
+		if(n==3){
+  		printf("輸錯三次");
+  		return 0;
+  		}
+  		printf("密碼錯誤");
   		printf("再次輸入密碼:");
   		scanf("%d",&input);
   	
-  	if(n=3){
-  		printf("輸錯三次");
-  		break;
-	  }
+	  
   }
  printf("恭喜輸入正確"); 
+ system("pause");
+  system("cls");
+  
+  printf("--------------------------\n");
+  printf("|  a. 畫出直角三角形      |\n");
+  printf("|  b. 顯示乘法表          |\n");
+  printf("|  c. 結束                |\n");
+  printf("--------------------------- \n");
+        
+		printf("請選擇操作：");
+        scanf(" %c", &choose);
+ system("pause");
+  system("cls");
+ 
  
  
  } 
