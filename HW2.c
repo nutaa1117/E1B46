@@ -103,23 +103,22 @@ int main(void)
                     	printf("\n");
                 }break;
                 
-        case 'c';
-        case 'C';
-        	printf("continue(y/n)");
-        	
+                
+               
+                
+        
 	
+
 	
+
 	
-	
-	
-	
+
 	
 	
 	
 	}
 
     
-
 
 
 
