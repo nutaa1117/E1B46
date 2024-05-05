@@ -102,6 +102,11 @@ int main(void)
                         printf("%4d\n",i*j);
                     	printf("\n");
                 }break;
+                
+        case 'c';
+        case 'C';
+        	printf("continue(y/n)");
+        	
 	
 	
 	
