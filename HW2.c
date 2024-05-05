@@ -26,7 +26,7 @@ int main(void)
     system("pause");
     system("cls");
 
-    int password = 2024, input = 0, n = 0;    //設定整數名稱
+    int password = 2024, input=0, n=0,v=0;    //設定整數名稱
     char choose;
     char draw;
 
@@ -70,7 +70,7 @@ int main(void)
         if (draw < 'a' || draw > 'n')
         {
             printf("請輸入有效範圍的字元（a-n）\n");  //判斷輸入的字元有沒有在範圍裡
-            break;
+            scanf(" %c", &draw);
         }
 
         char c, d;
@@ -84,9 +84,43 @@ int main(void)
             printf("\n"); 
         }
         break;
-    }
+    
+		case 'b':
+        case 'B':
+                
+                printf("請輸入一個整數(1-9)：");  
+                scanf("%d", &v);
+                if (v<1||v>9) {      //判斷是否在1~9的區間 
+                    printf("請輸入有效範圍的整數（1-9）\n");
+                    scanf("%d", &v);
+                }
 
-    system("pause");
-    return 0;
+                
+                int i=0,j=0;
+                for (i=1; i<=v;i++) {
+                    for (j=1; j<=v; j++) 
+                        printf("%4d\n",i*j);
+                    	printf("\n");
+                }break;
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	}
+
+    
+
+
+
+
+
+
+
+
 }
 
