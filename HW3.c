@@ -1,7 +1,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<time.h>
-
+#include <string.h>
 #define ROWS 9
 #define COLS 9
 
@@ -139,20 +139,26 @@ int main(void){
 		    	int numSeats;
 		    	printf("How many seats do you want(1~4)?");
 		    	scanf("%d", &numSeats);
-				
 				if(numSeats<1 || numSeats>4){
 					printf("your enter is wrong");
-				}break;
+				break;
+				}
 				
-				
-				
+			char CopySeats[ROWS][COLS];	
+				memcpy(CopySeats, seats, sizeof(seats));
+                suggestSeats(CopySeats, numSeats);
+			    
+				printf("Suggested seats:\n");
+                displayseats(CopySeats);
+			
+			break;
 			}
 	    	
-	}    	
+	    	
 		
 		
 		
-		
+	}	
 		
 		}while(choice!=0);
 	
