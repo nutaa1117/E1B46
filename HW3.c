@@ -46,6 +46,32 @@ void displayseats(char seats[ROWS][COLS]){
    }
 }
    
+   void suggestSeats(char seats[ROWS][COLS], int numSeats){  
+    int found = 0;
+    int row, col, i, fit;
+    while(!found){
+    	row=rand()%ROWS;
+    	col=rand()%(COLS-numSeats+1);
+    	fit=1;
+	  
+	  for(i=0;i<numSeats;i++){
+	  	if(seats[row][col+i]='-'){
+	  		fit=0;
+	  		break;
+		  }
+	  }
+      
+      if(fit){
+      	for(i=0;i<numSeats;i++){
+      		seats[row][col+i]='@';
+		  }
+		  found=1;
+	  }
+ 
+   }
+}
+
+ 
 
 int main(void){
 	char seats[ROWS][COLS];
