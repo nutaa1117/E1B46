@@ -15,7 +15,18 @@ void Booking_system(){
 	    printf("choose what you want?");
 }
 
+void Firstseats(char seats[ROWS][COLS]){
+	int i,j;
+	for( i=0;i<ROWS;i++){
+		for( j=0;j<COLS;j++){
+			seats[i][j]='-';
+		}
+	}
 
+    
+
+
+}
 
 
 int main(void){
