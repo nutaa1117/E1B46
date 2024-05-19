@@ -1,5 +1,23 @@
 #include<stdio.h>
 #include<stdlib.h>
+#include<time.h>
+
+#define ROWS 9
+#define COLS 9
+
+void Booking_system(){
+        printf("----------[BookingSystem]----------\n");
+        printf("|  a. Available seats             |\n");
+        printf("|  b. Arrange for you             |\n");
+        printf("|  c. Choose by yourself          |\n");
+        printf("|  d. Exit                        |\n");
+        printf("------------------------------------\n");
+	    printf("choose what you want?");
+}
+
+
+
+
 int main(void){
 	printf("++_=====_+++_+_+_+++++++====_+_+_+_+=====+_+_+_+_+_+=========_+_+_+_+_+_~~\n");
 	printf("_________________________________________________________________________?\n");
@@ -30,22 +48,22 @@ int main(void){
     system("cls");
     
     int input=0,n=0,i=3;
-    printf("請輸入密碼(共有3次機會):");
+    printf("Please enter your password(You have 3 chance! )\n");
     scanf("%d",&input);
     while(input!=2024){
     	n++;
     	if(n==3){
-		 printf("已輸錯3次密碼");
+		 printf("Wrong 3 time already");
 		return 0;}
 		i--;
-    printf("密碼錯誤請重新輸入(剩餘%d次)\n",i);	 
+    printf("Wrong Please try again(%d chance)\n",i);	 
     	scanf("%d",&input);
 	}
-    printf("密碼正確，歡迎您\n");
+    printf("Correct!welcome!!\n");
     system("pause");
     system("cls");
 	
-	
+	    
 	
 	
 	
