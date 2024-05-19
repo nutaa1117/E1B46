@@ -5,7 +5,7 @@
 #define ROWS 9
 #define COLS 9
 
-void Booking_system(){
+void Booking_system(){                              //函數選單的定義，後面使用時可直接叫出來 
         printf("----------[BookingSystem]----------\n");
         printf("|  a. Available seats             |\n");
         printf("|  b. Arrange for you             |\n");
@@ -15,21 +15,42 @@ void Booking_system(){
 	    printf("choose what you want?");
 }
 
-void Firstseats(char seats[ROWS][COLS]){
+void Firstseats(char seats[ROWS][COLS]){        //先把二階函數裡的值存入 
 	int i,j;
 	for( i=0;i<ROWS;i++){
 		for( j=0;j<COLS;j++){
-			seats[i][j]='-';
+			seats[i][j]='-';            //每一列每一行都是- 
 		}
 	}
 
-    
-
-
+    srand(time(0));         //設定時間種數，這樣每次都會產出不同的數 
+    for(i=0;i<10;i++){          //產生十個隨機位子 
+    	int row,col;
+	 do{
+	 	row=rand()%ROWS;                
+	 	col=rand()%COLS;
+	 }while(seats[row][col]=='*');       //隨機產生的數字，對應行列的位置 
+	 seats[row][col]='*';           //印出*符號 
+    }   
 }
 
+void displayseats(char seats[ROWS][COLS]){     
+	printf(" \\123456789\n");
+	int i,j;
+  for(i=ROWS-1;i>=0;i--){                     //印出座位表格
+      printf("%d ", i + 1);       
+  	for(j=0;j<COLS;j++){
+  		printf("%c",seats[i][j]);
+	  } 
+	  printf("\n");
+   }
+}
+   
 
 int main(void){
+	char seats[ROWS][COLS];
+    char choice;
+	
 	printf("++_=====_+++_+_+_+++++++====_+_+_+_+=====+_+_+_+_+_+=========_+_+_+_+_+_~~\n");
 	printf("_________________________________________________________________________?\n");
 	printf("                                          ~  ~~~~~~~~~~~~~~~~~~~~~~    !!!\n");
@@ -74,7 +95,28 @@ int main(void){
     system("pause");
     system("cls");
 	
-	    
+	
+	Firstseats(seats);
+	    do{
+	    	Booking_system();
+	    	scanf("%c",&choice);
+	    	
+	    switch(choice){
+	    	case 'a':
+	    		printf("Available seats:\n");
+	    		displayseats(seats);
+	    	     system("pause");
+                 system("cls");
+	    	break;
+		}	
+	    	
+	    	
+		
+		
+		
+		
+		
+		}while(choice!=0);
 	
 	
 	
