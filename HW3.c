@@ -134,9 +134,21 @@ int main(void){
 	    	     system("pause");
                  system("cls");
 	    	break;
-		}	
+			
+		    case 'b':{
+		    	int numSeats;
+		    	printf("How many seats do you want(1~4)?");
+		    	scanf("%d", &numSeats);
+				
+				if(numSeats<1 || numSeats>4){
+					printf("your enter is wrong");
+				}break;
+				
+				
+				
+			}
 	    	
-	    	
+	}    	
 		
 		
 		
