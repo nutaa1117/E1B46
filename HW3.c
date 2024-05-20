@@ -188,9 +188,16 @@ int main(void){
 			}
 		    
 		    case 'c':{
-		    	
-		    	
-		    	
+		    	char input[4];
+		    	int row,col;
+		    	printf("Enter the seats you want(ex: 1-2)");
+		    	scanf("%s",&input);
+		    	clearInputBuffer();
+		    	if(!OKinput(input,&row,&col) || seats[row][col]!='-'){
+		    		printf("wrong or the seats already taken");
+		    		getchar();
+		    		break;
+				}
 		    	
 		    	
 				break;
