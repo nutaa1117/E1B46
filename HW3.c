@@ -157,7 +157,22 @@ int main(void){
                     getchar();
                     break;
                 }
-			    
+			    char CopySeats[ROWS][COLS];
+                   memcpy(CopySeats, seats, sizeof(seats));
+                   suggestSeats(CopySeats, numSeats);
+
+                
+                   printf("Suggested seats:\n");
+                    displayseats(CopySeats);
+
+                    printf("Do you like (y/n)?: ");
+                    cont = getchar(); 
+                    clearInputBuffer();
+
+                if (cont=='y' || cont=='Y') {
+                memcpy(seats,CopySeats,sizeof(seats));
+            }
+                break;
 			
 			}
 		    
