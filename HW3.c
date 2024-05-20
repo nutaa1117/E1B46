@@ -126,7 +126,7 @@ int main(void){
 	char seats[ROWS][COLS],choice,cont;
     int input=0,n=0,i=3;
    
-    printf("Please enter your password(You have 3 chance! )\n");
+    printf("Please enter your password(You have 3 chance!)\n");
     scanf("%d",&input);
     while(input!=2024){
     	n++;
@@ -198,7 +198,20 @@ int main(void){
 		    		getchar();
 		    		break;
 				}
-		    	
+		    	seats[row][col] = '@';
+                printf("Chosen seats:\n");
+                displayseats(seats);
+                printf("press enter to return the Booking_system...");
+                getchar();
+
+                int i,j;
+                for(i=0;i<ROWS;i++){
+                    for(j=0;j<COLS;j++){
+                        if(seats[i][j]=='@'){
+                            seats[i][j] ='*';
+                        }
+                    }
+                }
 		    	
 				break;
 			}
