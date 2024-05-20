@@ -146,7 +146,7 @@ int main(void){
 	    do{
 		
 	    	Booking_system();
-	    	choice = getchar();
+	    	choice=getchar();
 	    	clearInputBuffer() ;
 	    	
 	    switch(choice){
@@ -232,11 +232,15 @@ int main(void){
 				
 				break;
 			}
+		    default:
+                printf("Wrong!Please enter a b c d \n");
+                printf("press enter to return the Booking_system...");
+                getchar();
+                break;
 		    
 		    
-		    
-	}
-			}while(choice!=0);
+       	}
+			}while(choice!=5);
 
 		
 		
