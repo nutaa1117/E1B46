@@ -78,7 +78,18 @@ void displayseats(char seats[ROWS][COLS]){
    }
 }
 
- 
+ int OKinput(char *input, int *row, int *col) {
+    if (strlen(input) != 3 || input[1] != '-') return 0;
+
+    *row = input[0] - '1';
+    *col = input[2] - '1';
+
+    if (*row < 0 || *row >= ROWS || *col < 0 || *col >= COLS) return 0;
+
+    return 1;
+}
+
+
 
 int main(void){
 
@@ -149,7 +160,7 @@ int main(void){
 			case 'b':{
 				
 			     int numSeats;
-			    printf("How many seats do you want(1~4) ");
+			    printf("How many seats do you want(1~4) ");               
                 scanf("%d", &numSeats);
                 clearInputBuffer();
 			    if (numSeats < 1 || numSeats > 4) {
@@ -175,6 +186,19 @@ int main(void){
                 break;
 			
 			}
+		    
+		    case 'c':{
+		    	
+		    	
+		    	
+		    	
+		    	
+				break;
+			}
+		    
+		    
+		    
+		    
 		    
 	}
 			}while(choice!=0);
