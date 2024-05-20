@@ -216,7 +216,22 @@ int main(void){
 				break;
 			}
 		    
-		    
+		    case 'd':{
+				printf("Continue? (y/n):");
+                cont = getchar(); 
+                clearInputBuffer();
+
+                if(cont=='n' ||cont=='N'){
+                    printf("Over!!\n");
+                    return 0;
+                } else if(cont=='y' || cont=='Y'){
+                    printf("OK!press enter to return the Booking_system...");
+                    getchar();
+                }
+			
+				
+				break;
+			}
 		    
 		    
 		    
