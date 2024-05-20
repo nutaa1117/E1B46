@@ -5,6 +5,13 @@
 #define ROWS 9
 #define COLS 9
 
+void clearInputBuffer() {    //為了檢查輸入緩衝區中不會有多餘的字符 
+
+    int c;
+    while ((c = getchar()) != '\n' && c != EOF);}
+
+
+
 void Booking_system(){                              //函數選單的定義，後面使用時可直接叫出來 
         printf("----------[BookingSystem]----------\n");
         printf("|  a. Available seats             |\n");
@@ -55,7 +62,7 @@ void displayseats(char seats[ROWS][COLS]){
     	fit=1;
 	  
 	  for(i=0;i<numSeats;i++){
-	  	if(seats[row][col+i]='-'){
+	  	if(seats[row][col+i]!='-'){
 	  		fit=0;
 	  		break;
 		  }
@@ -74,8 +81,8 @@ void displayseats(char seats[ROWS][COLS]){
  
 
 int main(void){
-	char seats[ROWS][COLS];
-    char choice;
+
+
 	
 	printf("++_=====_+++_+_+_+++++++====_+_+_+_+=====+_+_+_+_+_+=========_+_+_+_+_+_~~\n");
 	printf("_________________________________________________________________________?\n");
@@ -105,7 +112,9 @@ int main(void){
 	system("pause");
     system("cls");
     
+	char seats[ROWS][COLS],choice,cont;
     int input=0,n=0,i=3;
+   
     printf("Please enter your password(You have 3 chance! )\n");
     scanf("%d",&input);
     while(input!=2024){
@@ -124,48 +133,34 @@ int main(void){
 	
 	Firstseats(seats);
 	    do{
+		
 	    	Booking_system();
-	    	scanf("%c",&choice);
+	    	choice = getchar();
+	    	clearInputBuffer() ;
 	    	
 	    switch(choice){
+		
 	    	case 'a':
 	    		printf("Available seats:\n");
 	    		displayseats(seats);
-	    	     system("pause");
-                 system("cls");
-	    	break;
+	    	     printf("press enter to return the Booking_system...");
+	    	     getchar();
+	    	     break;
 			
-		    case 'b':{
-		    	int numSeats;
-		    	printf("How many seats do you want(1~4)?");
-		    	scanf("%d", &numSeats);
-				if(numSeats<1 || numSeats>4){
-					printf("your enter is wrong");
-				break;
-				}
-				
-			char CopySeats[ROWS][COLS];	
-				memcpy(CopySeats, seats, sizeof(seats));
-                suggestSeats(CopySeats, numSeats);
-			    
-				printf("Suggested seats:\n");
-                displayseats(CopySeats);
-			
-			break;
-			}
-	    	
-	    	
+		    
+	}
+			}while(choice!=0);
+
 		
 		
 		
-	}	
-		
-		}while(choice!=0);
-	
-	
-	
 	
 	
 	system("pause");
 	return 0;
+
 }
+
+	
+	
+	
