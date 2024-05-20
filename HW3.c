@@ -146,7 +146,20 @@ int main(void){
 	    	     printf("press enter to return the Booking_system...");
 	    	     getchar();
 	    	     break;
+			case 'b':{
+				
+			     int numSeats;
+			    printf("How many seats do you want(1~4) ");
+                scanf("%d", &numSeats);
+                clearInputBuffer();
+			    if (numSeats < 1 || numSeats > 4) {
+                    printf("wrong number. press enter to return the Booking_system...");
+                    getchar();
+                    break;
+                }
+			    
 			
+			}
 		    
 	}
 			}while(choice!=0);
