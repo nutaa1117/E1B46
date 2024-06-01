@@ -95,6 +95,21 @@ void studentlist(){
 	
 }
 
+void displaystudentlist(){
+	clean();
+	printf("©m¦W  ID  math  pyhsics  english  average\n");
+	int i;
+	for(i=0;i<a;i++){
+		printf("%s  %d  %d  %d  %d  %.1f\n",students[i].name,students[i].id,students[i].math,students[i].physics,students[i].english,students[i].average);
+	}
+	system("pause");
+	clean();
+	
+	
+	
+	
+}
+
 
 int main(void){
 	mynumber();
