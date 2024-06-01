@@ -142,6 +142,18 @@ void compare(){
    }
 } 
 
+void rank(){
+	cleantoo();
+	compare();
+	printf("name  id  average\n");
+	int i;
+	for(i=0;i<a;i++){
+		printf("%s  %d  %.1f",students[i].name,students[i].id,students[i].average);
+	}
+	
+	system("pause");
+	clean();
+}
 
 int main(void){
 	mynumber();
