@@ -44,7 +44,7 @@ void clean() {
 
 void cleantoo(){
 	int c;
-	while((c=getchar())!='\n' && c!=EOF);
+	while((c=getchar())!='\n'&&c!=EOF);
 }
 
 void studentlist(){
@@ -112,12 +112,13 @@ void findstudentlist(){
 	printf("想要找尋的學生姓名:");
 	char findname[50];
 	scanf("%s",findname);
+	cleantoo();
 	int i,e=0;
 	for(i=0;i<a;i++){
 		if(strcmp(students[i].name,findname)==0){
 			printf("name:%s  ID:%d  math:%d  pyhsics:%d  english:%d  average:%.1f\n",students[i].name,students[i].id,students[i].math,students[i].physics,students[i].english,students[i].average);
-		    break;
 		    e=1;
+			break;
 		}
 	}
 	
@@ -206,18 +207,36 @@ int main(void){
 	system("pause");
 	clean();
 	password();
+	cleantoo();
 	char h;
 	while(1){
 		 Grade();
 		 h=getchar();
 		 cleantoo();
-		
-		
-		
-		
+		 
+		 switch(h){
+		 	case'a':
+		 		studentlist();
+		 	break;
+		 	case'b':
+		 		displaystudentlist();
+		 	break;
+		 	case'c':
+		 		findstudentlist();
+		 	break;
+		 	case'd':
+		 		rank();
+		 	break;
+		 	case'e':
+		 		leave();
+		 	break;
+		 	default:
+		 		printf("請輸入a~e");
+		 	
+		 	
+		 }
+			
 	}
-	
-	
-	
+	return 0;
 }
 
