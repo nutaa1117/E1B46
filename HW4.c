@@ -97,15 +97,26 @@ void studentlist(){
 
 void displaystudentlist(){
 	clean();
-	printf("姓名  ID  math  pyhsics  english  average\n");
+	printf("name  ID  math  pyhsics  english  average\n");
 	int i;
 	for(i=0;i<a;i++){
 		printf("%s  %d  %d  %d  %d  %.1f\n",students[i].name,students[i].id,students[i].math,students[i].physics,students[i].english,students[i].average);
 	}
 	system("pause");
 	clean();
-	
-	
+}
+
+void findstudentlist(){
+	cleantoo();
+	printf("想要找尋的學生姓名:");
+	char findname[50];
+	scanf("%s",findname);
+	int i;
+	for(i=0;i<a;i++){
+		if(strcmp(students[i].name,findname)==0){
+			
+		}
+	}
 	
 	
 }
