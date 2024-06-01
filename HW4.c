@@ -4,6 +4,7 @@
 
 
 
+
 void mynumber(){
 	printf("—--------------------------------------------------------------------------------------------\n");
 	printf("!                       44  44                                 66                            !\n");
@@ -128,6 +129,26 @@ void findstudentlist(){
 	
 }
 
+void password(){
+int n=0,input=0,i=3;
+printf("Please enter your password(You have 3 chance!)\n");       
+    scanf("%d",&input);
+    while(input!=2024){                   //判斷輸入的密碼是不是2024 
+    	n++;                           
+    	if(n==3){                    //當n=3時，程式結束 
+		 printf("Wrong 3 time already");
+		exit(0);}
+		i--;
+    printf("Wrong Please try again(%d chance)\n",i);	 //讓使用者重新輸入 
+    	scanf("%d",&input);
+	}
+    printf("Correct!welcome!!\n");                //輸入正確，歡迎你 
+    system("pause");
+    clean();
+}
+
+
+
 void compare(){
 	int i,j;
 	for(i=0;i<a-1;i++){
@@ -163,16 +184,40 @@ void leave(){
 		f=getchar();
 		cleantoo();
 		if(f=='y'||f=='Y'){
-			return 0;
+			exit(0);
 		}else if(f=='n'||f=='N'){
 			break;
 		}
 	}
 }
+void Grade(){
 
+        printf("------------[Grade System]----------\n");
+        printf("|  a. Enter student grades          |\n");
+        printf("|  b. Display student grades        |\n");
+        printf("|  c. Search for student grades     |\n");
+        printf("|  d. Grade ranking                 |\n");
+        printf("|  e. Exit system                   |\n");
+        printf("------------------------------------\n");
+        printf("請選擇: ");
+}
 int main(void){
 	mynumber();
 	system("pause");
 	clean();
+	password();
+	char h;
+	while(1){
+		 Grade();
+		 h=getchar();
+		 cleantoo();
+		
+		
+		
+		
+	}
+	
+	
+	
 }
 
