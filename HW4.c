@@ -155,6 +155,21 @@ void rank(){
 	clean();
 }
 
+void leave(){
+	cleantoo();
+	char f;
+	while(1){
+		printf("½T©wÂ÷¶}¡H(y/n):");
+		f=getchar();
+		cleantoo();
+		if(f=='y'||f=='Y'){
+			return 0;
+		}else if(f=='n'||f=='N'){
+			break;
+		}
+	}
+}
+
 int main(void){
 	mynumber();
 	system("pause");
