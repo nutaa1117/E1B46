@@ -111,12 +111,17 @@ void findstudentlist(){
 	printf("想要找尋的學生姓名:");
 	char findname[50];
 	scanf("%s",findname);
-	int i;
+	int i,e=0;
 	for(i=0;i<a;i++){
 		if(strcmp(students[i].name,findname)==0){
 			printf("name:%s  ID:%d  math:%d  pyhsics:%d  english:%d  average:%.1f\n",students[i].name,students[i].id,students[i].math,students[i].physics,students[i].english,students[i].average);
 		    break;
+		    e=1;
 		}
+	}
+	
+	if(e==0){
+		printf("輸入的名字不存在!"); 
 	}
 	 system("pause");
 	 clean();
@@ -127,11 +132,15 @@ void compare(){
 	int i,j;
 	for(i=0;i<a-1;i++){
       for(j=0;j<a-1-i;j++){
-      	
+      	if(students[j].average<students[j+1].average){
+      		struct Student d=students[j];
+      		students[j]=students[j+1];
+      		students[j+1]=d;
+		  }
 	  } 
 	
-}
-
+   }
+} 
 
 
 int main(void){
