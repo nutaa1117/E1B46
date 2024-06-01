@@ -58,7 +58,7 @@ void studentlist(){
 	}
 	a=b;
 	int i;
-	for( i=0;i<b;i++){
+	for(i=0;i<b;i++){
 		printf("輸入學生姓名:");
 		scanf("%s",students[i].name);
 		printf("輸入學號 (6位整數):");
@@ -68,11 +68,30 @@ void studentlist(){
 		    scanf("%d",&students[i].id);
 		    cleantoo();
 		}
-		
-		
-		
+		printf("輸入數學成績(0~100):");
+		scanf("%d",&students[i].math);
+		while(students[i].math<0 || students[i].math>100){
+			printf("輸入錯誤，請重新輸入數學成績(0~100):");
+			cleantoo();
+		}
+		printf("輸入物理成績(0~100):");
+		scanf("%d",&students[i].physics);
+		while(students[i].physics<0 || students[i].physics>100){
+			printf("輸入錯誤，請重新輸入物理成績(0~100):");
+			scanf("%d",&students[i].physics);
+			cleantoo();
+		}
+		printf("輸入英文成績(0~100):");
+		scanf("%d",&students[i].english);
+		while(students[i].english<0 || students[i].english>100){
+			printf("輸入錯誤，請重新輸入英文成績(0~100):");
+			scanf("%d",&students[i].english);
+			cleantoo();
+		}
+		students[i].average=(students[i].math+students[i].physics+students[i].english)/3.0;	
 	}
-	
+	  cleantoo();
+	  clean();
 	
 }
 
