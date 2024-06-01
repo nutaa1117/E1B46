@@ -114,12 +114,24 @@ void findstudentlist(){
 	int i;
 	for(i=0;i<a;i++){
 		if(strcmp(students[i].name,findname)==0){
-			
+			printf("name:%s  ID:%d  math:%d  pyhsics:%d  english:%d  average:%.1f\n",students[i].name,students[i].id,students[i].math,students[i].physics,students[i].english,students[i].average);
+		    break;
 		}
 	}
-	
+	 system("pause");
+	 clean();
 	
 }
+
+void compare(){
+	int i,j;
+	for(i=0;i<a-1;i++){
+      for(j=0;j<a-1-i;j++){
+      	
+	  } 
+	
+}
+
 
 
 int main(void){
